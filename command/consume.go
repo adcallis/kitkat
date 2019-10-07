@@ -6,6 +6,7 @@ import (
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/aws/credentials/processcreds"
 	"github.com/aws/aws-sdk-go/service/kinesis"
 	"github.com/spf13/cobra"
 	"github.com/waltzofpearls/kitkat/consumer"
@@ -36,7 +37,7 @@ func consume(c *consumer.Consumer) runFunc {
 		}
 		c.Verbose = verbose
 		c.Client = kinesis.New(
-			session.NewSession(&aws.Config{
+			session.NewSessionWithOptions(&aws.Config{
 				Region: aws.String(c.Region),
 			}),
 		)
