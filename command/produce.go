@@ -35,7 +35,7 @@ func produce(p *producer.Producer) runFunc {
 		}
 		p.Verbose = verbose
 		p.Client = kinesis.New(
-			session.New(&aws.Config{
+			session.NewSessionWithOptions(&aws.Config{
 				Region: aws.String(p.Region),
 			}),
 		)
