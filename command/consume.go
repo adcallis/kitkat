@@ -36,7 +36,7 @@ func consume(c *consumer.Consumer) runFunc {
 		}
 		c.Verbose = verbose
 		c.Client = kinesis.New(
-			session.New(&aws.Config{
+			session.NewSession(&aws.Config{
 				Region: aws.String(c.Region),
 			}),
 		)
