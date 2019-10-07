@@ -36,11 +36,11 @@ func consume(c *consumer.Consumer) runFunc {
 			os.Exit(1)
 		}
 		c.Verbose = verbose
-		c.Client = kinesis.New(
-			session.NewSessionWithOptions(&aws.Config{
-				Region: aws.String(c.Region),
-			}),
+		 sess, _ := session.NewSession(&aws.Config{
+			 Region: aws.String("us-east-1")},
 		)
+		c.Client = kinesis.New(sess)
+
 		if err := c.Read(); err != nil {
 			fmt.Fprintln(os.Stderr, "ERROR:", err)
 			os.Exit(1)
