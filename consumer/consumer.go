@@ -14,7 +14,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/kinesis/kinesisiface"
 	"github.com/golang/protobuf/proto"
 	"github.com/olekukonko/tablewriter"
-	"github.com/waltzofpearls/kitkat/aggregated"
+	"github.com/adcallis/kitkat/aggregated"
 )
 
 var magicNumber = []byte{0xF3, 0x89, 0x9A, 0xC2}
