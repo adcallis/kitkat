@@ -1,7 +1,7 @@
 module github.com/waltzofpearls/kitkat
 
 require (
-	github.com/aws/aws-sdk-go v1.15.68
+	github.com/aws/aws-sdk-go v1.25.6
 	github.com/go-ini/ini v1.38.3 // indirect
 	github.com/golang/protobuf v1.2.0
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
